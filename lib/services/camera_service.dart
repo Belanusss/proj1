@@ -19,7 +19,7 @@ class CameraService {
       }
       return null;
     } catch (e) {
-      throw Exception('Ошибка при съемке фото: $e');
+      throw Exception('Error when taking a photo: $e');
     }
   }
 
@@ -38,7 +38,7 @@ class CameraService {
       }
       return null;
     } catch (e) {
-      throw Exception('Ошибка при выборе фото: $e');
+      throw Exception('Error selecting photo: $e');
     }
   }
 }

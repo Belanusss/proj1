@@ -33,7 +33,7 @@ class LocationService {
       bool hasPermission = await requestPermission();
       
       if (!hasPermission) {
-        throw Exception('Нет разрешения на доступ к местоположению');
+        throw Exception('No permission to access location');
       }
 
       Position position = await Geolocator.getCurrentPosition(
@@ -42,7 +42,7 @@ class LocationService {
 
       return position;
     } catch (e) {
-      throw Exception('Ошибка получения местоположения: $e');
+      throw Exception('Location retrieval error: $e');
     }
   }
 }

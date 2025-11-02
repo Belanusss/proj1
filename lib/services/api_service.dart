@@ -19,7 +19,7 @@ class ApiService {
         return Entry.fromJson(data);
       }).toList();
     } catch (e) {
-      throw Exception('Ошибка загрузки записей: $e');
+      throw Exception('Error loading entry: $e');
     }
   }
 
@@ -36,7 +36,7 @@ class ApiService {
       newData['id'] = doc.id;
       return Entry.fromJson(newData);
     } catch (e) {
-      throw Exception('Ошибка создания записи: $e');
+      throw Exception('Error creating entry: $e');
     }
   }
 
@@ -50,10 +50,10 @@ class ApiService {
         data['id'] = doc.id;
         return Entry.fromJson(data);
       } else {
-        throw Exception('Запись не найдена');
+        throw Exception('No entry found');
       }
     } catch (e) {
-      throw Exception('Ошибка загрузки записи: $e');
+      throw Exception('Error loading entry: $e');
     }
   }
 
@@ -67,7 +67,7 @@ class ApiService {
       
       return getEntryById(id);
     } catch (e) {
-      throw Exception('Ошибка обновления записи: $e');
+      throw Exception('Entry update error: $e');
     }
   }
 
@@ -76,7 +76,7 @@ class ApiService {
     try {
       await _firestore.collection(_collection).doc(id).delete();
     } catch (e) {
-      throw Exception('Ошибка удаления записи: $e');
+      throw Exception('Error deleting entry: $e');
     }
   }
 }

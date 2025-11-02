@@ -9,14 +9,14 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Настройки'),
+        title: const Text('Settings'),
       ),
       body: ListView(
         children: [
           const Padding(
             padding: EdgeInsets.all(16),
             child: Text(
-              'Внешний вид',
+              'Appearance',
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -29,8 +29,8 @@ class SettingsScreen extends StatelessWidget {
               return Column(
                 children: [
                   RadioListTile<ThemeMode>(
-                    title: const Text('Светлая тема'),
-                    subtitle: const Text('Всегда использовать светлую тему'),
+                    title: const Text('Light theme'),
+                    subtitle: const Text('Always use a light theme'),
                     value: ThemeMode.light,
                     groupValue: themeProvider.themeMode,
                     onChanged: (ThemeMode? value) {
@@ -40,8 +40,8 @@ class SettingsScreen extends StatelessWidget {
                     },
                   ),
                   RadioListTile<ThemeMode>(
-                    title: const Text('Темная тема'),
-                    subtitle: const Text('Всегда использовать темную тему'),
+                    title: const Text('Dark theme'),
+                    subtitle: const Text('Always use a dark theme'),
                     value: ThemeMode.dark,
                     groupValue: themeProvider.themeMode,
                     onChanged: (ThemeMode? value) {
@@ -51,8 +51,8 @@ class SettingsScreen extends StatelessWidget {
                     },
                   ),
                   RadioListTile<ThemeMode>(
-                    title: const Text('Системная'),
-                    subtitle: const Text('Следовать настройкам системы'),
+                    title: const Text('Systemic'),
+                    subtitle: const Text('Follow the system settings'),
                     value: ThemeMode.system,
                     groupValue: themeProvider.themeMode,
                     onChanged: (ThemeMode? value) {
@@ -69,7 +69,7 @@ class SettingsScreen extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(16),
             child: Text(
-              'О приложении',
+              'О application',
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           const ListTile(
-            title: Text('Версия'),
+            title: Text('Version'),
             subtitle: Text('1.0.0'),
           ),
         ],

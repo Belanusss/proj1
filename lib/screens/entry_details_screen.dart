@@ -13,7 +13,7 @@ class EntryDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Детали записи'),
+        title: const Text('Entries details'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -73,7 +73,7 @@ class EntryDetailsScreen extends StatelessWidget {
 
                   
                   Text(
-                    'Описание',
+                    'Description',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -88,7 +88,7 @@ class EntryDetailsScreen extends StatelessWidget {
                   
                   if (entry.latitude != null && entry.longitude != null) ...[
                     Text(
-                      'Местоположение',
+                      'Location',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
@@ -109,11 +109,11 @@ class EntryDetailsScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Широта: ${entry.latitude!.toStringAsFixed(6)}',
+                                    'Latitude: ${entry.latitude!.toStringAsFixed(6)}',
                                     style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                   Text(
-                                    'Долгота: ${entry.longitude!.toStringAsFixed(6)}',
+                                    'Longitude: ${entry.longitude!.toStringAsFixed(6)}',
                                     style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                 ],

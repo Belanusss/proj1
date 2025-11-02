@@ -50,7 +50,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('✓ Местоположение получено'),
+            content: Text('Location obtained'),
             backgroundColor: Colors.green,
           ),
         );
@@ -63,7 +63,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Ошибка: $e'),
+            content: Text('Error: $e'),
             backgroundColor: Colors.red,
           ),
         );
@@ -84,7 +84,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Ошибка: $e'),
+            content: Text('Error: $e'),
             backgroundColor: Colors.red,
           ),
         );
@@ -105,7 +105,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Ошибка: $e'),
+            content: Text('Error: $e'),
             backgroundColor: Colors.red,
           ),
         );
@@ -118,13 +118,13 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Выберите источник'),
+        title: const Text('Select source'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               leading: const Icon(Icons.camera_alt),
-              title: const Text('Камера'),
+              title: const Text('Camera'),
               onTap: () {
                 Navigator.pop(context);
                 _takePhoto();
@@ -132,7 +132,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.photo_library),
-              title: const Text('Галерея'),
+              title: const Text('Gallery'),
               onTap: () {
                 Navigator.pop(context);
                 _pickImage();
@@ -176,7 +176,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       if (success) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('✓ Запись успешно добавлена'),
+            content: Text('Entry successfully added'),
             backgroundColor: Colors.green,
           ),
         );
@@ -184,7 +184,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Ошибка при добавлении записи'),
+            content: Text('Error adding entry'),
             backgroundColor: Colors.red,
           ),
         );
@@ -196,7 +196,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Добавить запись'),
+        title: const Text('Add entry'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -209,13 +209,13 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
               TextFormField(
                 controller: _titleController,
                 decoration: const InputDecoration(
-                  labelText: 'Заголовок *',
+                  labelText: 'Title *',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.title),
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Введите заголовок';
+                    return 'Enter title';
                   }
                   return null;
                 },
@@ -226,7 +226,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
               TextFormField(
                 controller: _descriptionController,
                 decoration: const InputDecoration(
-                  labelText: 'Описание *',
+                  labelText: 'Description *',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.description),
                   alignLabelWithHint: true,
@@ -234,7 +234,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                 maxLines: 5,
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Введите описание';
+                    return 'Enter description';
                   }
                   return null;
                 },
@@ -253,8 +253,8 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                     : const Icon(Icons.my_location),
                 label: Text(
                   _currentPosition != null
-                      ? 'Местоположение получено'
-                      : 'Получить местоположение',
+                      ? 'Location obtained'
+                      : 'Get location',
                 ),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(16),
@@ -266,7 +266,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
-                    'Координаты: ${_currentPosition!.latitude.toStringAsFixed(6)}, '
+                    'Coordinates: ${_currentPosition!.latitude.toStringAsFixed(6)}, '
                     '${_currentPosition!.longitude.toStringAsFixed(6)}',
                     style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.center,
@@ -278,7 +278,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
               OutlinedButton.icon(
                 onPressed: _showImageSourceDialog,
                 icon: const Icon(Icons.camera_alt),
-                label: Text(_imageFile != null ? 'Изменить фото' : 'Добавить фото'),
+                label: Text(_imageFile != null ? 'Change photo' : 'Add photo'),
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.all(16),
                 ),
@@ -333,7 +333,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : const Text(
-                        'Сохранить',
+                        'Save',
                         style: TextStyle(fontSize: 16),
                       ),
               ),

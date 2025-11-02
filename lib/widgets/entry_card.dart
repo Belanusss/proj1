@@ -94,7 +94,7 @@ class EntryCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          'Координаты',
+                          'Coordinates',
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ],

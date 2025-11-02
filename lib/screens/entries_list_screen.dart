@@ -28,7 +28,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Записи'),
+        title: const Text('Entries'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -47,7 +47,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
         builder: (context, provider, child) {
           
           if (provider.isLoading && provider.entries.isEmpty) {
-            return const LoadingIndicator(message: 'Загрузка записей...');
+            return const LoadingIndicator(message: 'Uploading entries...');
           }
 
           
@@ -63,7 +63,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Ошибка загрузки',
+                    'Download error',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: 8),
@@ -79,7 +79,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
                   ElevatedButton.icon(
                     onPressed: () => provider.fetchEntries(),
                     icon: const Icon(Icons.refresh),
-                    label: const Text('Попробовать снова'),
+                    label: const Text('Try again'),
                   ),
                 ],
               ),
@@ -90,8 +90,8 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
           if (provider.entries.isEmpty) {
             return const EmptyState(
               icon: Icons.note_add,
-              title: 'Нет записей',
-              message: 'Добавьте первую запись, нажав на кнопку +',
+              title: 'No entries',
+              message: 'Add the first entry by clicking on the button. +',
             );
           }
 
@@ -125,7 +125,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
           }
         },
         icon: const Icon(Icons.add),
-        label: const Text('Добавить'),
+        label: const Text('Add'),
       ),
     );
   }
