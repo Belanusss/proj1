@@ -1,12 +1,12 @@
 import 'package:geolocator/geolocator.dart';
 
 class LocationService {
-  // Проверка и запрос разрешений
+  
   Future<bool> requestPermission() async {
     bool serviceEnabled;
     LocationPermission permission;
 
-    // Проверяем, включены ли службы геолокации
+    
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       return false;
@@ -27,7 +27,7 @@ class LocationService {
     return true;
   }
 
-  // Получить текущую позицию
+  
   Future<Position?> getCurrentLocation() async {
     try {
       bool hasPermission = await requestPermission();

@@ -13,7 +13,7 @@ class EntriesProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get error => _error;
 
-  // Загрузить все записи
+  
   Future<void> fetchEntries() async {
     _isLoading = true;
     _error = null;
@@ -31,7 +31,7 @@ class EntriesProvider extends ChangeNotifier {
     }
   }
 
-  // Добавить новую запись
+  
   Future<bool> addEntry(Entry entry) async {
     _isLoading = true;
     _error = null;
@@ -52,7 +52,7 @@ class EntriesProvider extends ChangeNotifier {
     }
   }
 
-  // Получить запись по ID
+  
   Entry? getEntryById(String id) {
     try {
       return _entries.firstWhere((entry) => entry.id == id);
@@ -61,7 +61,7 @@ class EntriesProvider extends ChangeNotifier {
     }
   }
 
-  // Удалить запись
+  
   Future<bool> deleteEntry(String id) async {
     _isLoading = true;
     _error = null;
@@ -82,7 +82,7 @@ class EntriesProvider extends ChangeNotifier {
     }
   }
 
-  // Обновить запись
+  
   Future<bool> updateEntry(Entry updatedEntry) async {
     _isLoading = true;
     _error = null;

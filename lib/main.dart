@@ -7,10 +7,10 @@ import 'providers/theme_provider.dart';
 import 'screens/entries_list_screen.dart';
 
 void main() async {
-  // Обязательно для Firebase
+  
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Инициализация Firebase
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

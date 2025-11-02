@@ -4,7 +4,7 @@ import 'package:image_picker/image_picker.dart';
 class CameraService {
   final ImagePicker _picker = ImagePicker();
 
-  // Сделать фото с камеры
+  
   Future<File?> takePhoto() async {
     try {
       final XFile? photo = await _picker.pickImage(
@@ -23,7 +23,7 @@ class CameraService {
     }
   }
 
-  // Выбрать фото из галереи
+  
   Future<File?> pickFromGallery() async {
     try {
       final XFile? image = await _picker.pickImage(

@@ -5,7 +5,7 @@ class ApiService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final String _collection = 'entries';
 
-  // GET: Получить все записи
+  
   Future<List<Entry>> getEntries() async {
     try {
       final snapshot = await _firestore
@@ -23,11 +23,11 @@ class ApiService {
     }
   }
 
-  // POST: Создать новую запись
+  
   Future<Entry> createEntry(Entry entry) async {
     try {
       final data = entry.toJson();
-      data.remove('id'); // Firestore создаст ID автоматически
+      data.remove('id'); 
       
       final docRef = await _firestore.collection(_collection).add(data);
       final doc = await docRef.get();
@@ -40,7 +40,7 @@ class ApiService {
     }
   }
 
-  // GET: Получить одну запись по ID
+  
   Future<Entry> getEntryById(String id) async {
     try {
       final doc = await _firestore.collection(_collection).doc(id).get();
@@ -57,11 +57,11 @@ class ApiService {
     }
   }
 
-  // UPDATE: Обновить запись
+  
   Future<Entry> updateEntry(String id, Entry entry) async {
     try {
       final data = entry.toJson();
-      data.remove('id'); // ID не обновляем
+      data.remove('id'); 
       
       await _firestore.collection(_collection).doc(id).update(data);
       
@@ -71,7 +71,7 @@ class ApiService {
     }
   }
 
-  // DELETE: Удалить запись
+  
   Future<void> deleteEntry(String id) async {
     try {
       await _firestore.collection(_collection).doc(id).delete();

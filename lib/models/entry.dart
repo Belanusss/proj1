@@ -19,11 +19,11 @@ class Entry {
     required this.createdAt,
   });
 
-  // Конвертация из JSON (включая Firestore Timestamp)
+  
   factory Entry.fromJson(Map<String, dynamic> json) {
     DateTime createdAt;
     
-    // Обработка Firestore Timestamp
+    
     if (json['createdAt'] is Timestamp) {
       createdAt = (json['createdAt'] as Timestamp).toDate();
     } else if (json['createdAt'] is String) {
@@ -43,7 +43,7 @@ class Entry {
     );
   }
 
-  // Конвертация в JSON для Firestore
+  
   Map<String, dynamic> toJson() {
     return {
       'title': title,
@@ -55,7 +55,7 @@ class Entry {
     };
   }
 
-  // Копирование с изменениями
+  
   Entry copyWith({
     String? id,
     String? title,
